@@ -1,46 +1,47 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>SignIn/SignUp Forms</title>
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>SignUp</title>
 
-    <link rel="stylesheet" href="/css/styles.css" />
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
-    />
-  </head>
-  <body>
-    <div class="container">
-      <div class="left">
-        <img src="/images/logogym.png" alt="Logo" />
-        <h2>Sign Up</h2>
-        <form id="signUpForm" class="form" action="/signup" method="POST">
-          <div class="form-group">
-            <label for="username">Username:</label>
-            <input type="text" id="username" name="username" required />
-          </div>
-          <div class="form-group">
-            <label for="Email">Email:</label>
-            <input type="text" id="email" name="email" required />
-          </div>
-          <div class="form-group">
-            <label for="password">Password:</label>
-            <input type="password" id="password" name="password" required />
-          </div>
-          <button id="signin-btn" type="submit">Sign Up</button>
-        </form>
-    </div>
-        <div class="right">
-          <img src="/images/signin.png" />
-          <h2>Welcome to Fit Fusion</h2>
-          <p>Start tracking your fitness journey today!</p>
+  <link rel="stylesheet" href="/css/signup.css" />
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+  />
+</head>
+<body>
+  <div class="container">
+    <div class="left">
+      <img src="/images/logogym.png" alt="Logo" />
+      <h2>Sign Up</h2>
+      <form id="signUpForm" action="/signup" method="POST">
+        <div class="form-group">
+          <label for="username">Username:</label>
+          <input type="text" id="username" name="username" required />
         </div>
-    
+        <div class="form-group">
+          <label for="Email">Email:</label>
+          <input type="text" id="email" name="email" required />
+        </div>
+        <div class="form-group">
+          <label for="password">Password:</label>
+          <input type="password" id="password" name="password" required />
+        </div>
+        
+        <button id="signup-btn" type="submit">Sign Up</button>
+      </form>
+      <a href="/signin.html" class="signin-link">Already have an account? Sign In</a>
     </div>
+    <div class="right">
+      <img src="/images/signin.png" />
+      <h2>Welcome to Fit Fusion</h2>
+      <p>Start tracking your fitness journey today!</p>
+    </div>
+  </div>
 
-    <script src="/js/scripts.js"></script>
-  </body>
+  <script src="/js/scripts.js"></script>
+</body>
 </html>
