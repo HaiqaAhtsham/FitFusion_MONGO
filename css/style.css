@@ -3,22 +3,26 @@ body {
     padding: 0;
     font-family: Arial, sans-serif;
     background-color: black;
-    color: #fff;
+    color: whitesmoke;
+    
   }
-  main{
+  #home-section{
     background-image: url('/images/main-bg1.jpg');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
     backdrop-filter: blur(2px);
   }
+ 
   
   header {
-    background-color: rgba(0, 0, 0, 0.97);
+    background-color:black;
     padding: 10px 0;
     display: flex;
     justify-content: space-between;
     align-items: center;
+    color:black;
+
   }
   
   .logo img {
@@ -33,7 +37,7 @@ body {
   
   nav ul li a {
     text-decoration: none;
-    color: rgb(255, 254, 254);
+    color: black;
     position: relative;
     transition: text-shadow 0.5s;
   }
@@ -47,11 +51,204 @@ body {
     background-color: yellowgreen;
   }
   nav ul li a:hover{
-    color:white;
+    color:rgb(175, 208, 109);
     text-shadow: 0 0 10px rgba(255, 255, 255, 0.7);
   }
   nav ul li a:hover::after{
     width: 50%;
+  }
+
+
+  .circle-container {
+    background-color: black;
+    margin-top: 10%;
+  }
+  .upper {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  .outercircle {
+    /* margin-top: 5%; */
+    position: relative;
+    height: 180px;
+    width: 180px;
+    background: conic-gradient(#fffdfd 300deg, black 0deg);
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .outercircle::before {
+    content: "";
+    position: absolute;
+    height: 170px;
+    width: 170px;
+    border-radius: 50%;
+    background-color: rgb(0, 0, 0);
+  }
+  .innercircle {
+    width: 130px;
+    height: 130px;
+    border-radius: 50%;
+    background-color: yellowgreen;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    position: absolute;
+
+    /* transform: translate(-50%, -50%); */
+  }
+  .circle-container p {
+    padding: 15px 15px;
+    color: white;
+  }
+  .circle-container h3 {
+    font-size: 35px;
+    color: white;
+    line-height: 0.7;
+    padding-left: 10px;
+    font-weight: 100;
+  }
+
+  #services-section{
+    background-color: whitesmoke;
+    color:black;
+    margin-top: 5%;
+    padding: 50px;
+  }
+  .services-container{
+    text-align: center;
+  }
+  .services-header{
+    margin-bottom: 50px;
+  }
+  .services-header h3{
+    font-size: 40px;
+    font-weight: 100;
+    color:yellowgreen;
+  }
+  .services-body .body-box h4{
+    font-size: 30px;
+    font-weight: 100;
+    color:yellowgreen;
+  }
+  .services-body .body-box p span{
+    color: rgba(90, 150, 11, 0.744);
+    font-style: italic;
+    font-weight: 100;
+  }
+
+  #about-section{
+    margin-top: 5%;
+    background-color: whitesmoke;
+    color:black;
+  }
+  .lastsection{
+    display: flex;
+    flex-direction: column;
+  }
+  .lastupper{
+   display:flex;
+    justify-content: space-between;
+  }
+  .lastupper .lefty 
+  {flex: 2;margin-left: 30px;}
+  .lastupper h3, .lastupper li,.lastupper p
+  { font-size: 12px;font-weight: 300;}
+  .lastupper .mainy 
+  { flex: 6;margin-left: 30px;}
+  .lastupper .righty {flex: 3;margin-left: 30px;}
+  
+  .lastupper > div{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    margin-top:5%;
+  }
+  @media only screen and (max-width:600px)
+  {
+    .lastupper{
+      display:flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+    .lastupper .lefty{
+       display: flex;
+       flex-wrap:wrap;
+    }
+
+      .lastsection .foot{
+        flex-direction: column;
+      }
+      .lastupper .right-container img{
+        width:40px;
+        height: 40px;
+        margin:5px;
+      }
+      .lastsection .foot-box-container{
+      margin-left:-45%;
+  
+      }
+  }
+  .lastupper .lefty h3 , .lastupper  .newsletter  h3, .lastupper .righty h3 {
+    color:yellowgreen;
+    font-size: 20px;
+    font-weight: 100;
+  }
+  .lastupper .lefty li{
+    list-style-type: none;
+    line-height: 2;
+   
+  }
+  .newsletter {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .lastupper .right-container{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    width:auto;
+  }
+  .lastupper .right-container img{
+    width:50px;
+    height: 50px;
+    margin-left:0;
+    margin-top:10px;
+    margin-bottom: 10px;
+    margin-right:10px;
+  }
+  
+  .lastsection .foot{
+    display: flex;
+    flex:1;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 8%;
+    margin-top: 3%;
+    margin-left:  7%;
+  }
+  .foot .foot-box-container{
+    display: flex;
+    justify-content: right;
+    align-items: flex-end;
+    gap:20px;
+   
+  }
+  .foot .foot-box-container .boxes{
+    display: flex;
+    background-color:yellowgreen;
+   width:30px;
+    height:30px;
+   align-items: center;
+   justify-content: center;
+   color:black;
   }
 
   footer {
