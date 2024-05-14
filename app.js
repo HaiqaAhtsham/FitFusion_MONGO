@@ -9,6 +9,7 @@ const authMiddleware = require('./authMiddleware'); // Import http module for cr
 const cookieParser = require('cookie-parser');
 const jwt = require('jsonwebtoken'); 
 require('dotenv').config();
+const User = require('./models/User'); 
 
 
 
@@ -26,7 +27,6 @@ app.use(cookieParser());
 
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'html');
-
 app.set('view engine', 'ejs');
 
 // Serve static files from the "views" folder
@@ -59,6 +59,35 @@ app.use(session({
   resave: false,
   saveUninitialized: true
 }));
+
+// Handle POST request to '/save-record'
+app.post('/save-record', async (req, res) => {
+  try {
+    // Extract data from the request body
+    const { walkDuration, caloriesIntake, exerciseMinutes } = req.body;
+
+
+    const user = await User.findOne({email:"f219061@cfd.nu.edu.pk"});
+    if (!user) {
+      return res.status(404).json({ error: 'User not found' });
+    }
+    // Create a new Daily Record instance
+    const newRecord = ({
+      walkDuration,
+      caloriesIntake,
+      exerciseMinutes,
+      // Add more fields as needed
+    });
+
+    // Save the record to the database
+    user.dailyRecords.push(newRecord);
+    await user.save();
+
+    res.status(200).json({ message: 'Record saved successfully' });
+  } catch (error) {
+    res.status(500).json({ error: error.message });
+  }
+});
 
 // Define routes
 app.use(routes);

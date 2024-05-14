@@ -15,7 +15,11 @@ body, html {
     align-items: center;
     background-color: white;
     padding: 10px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Add shadow for elevation effect */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); 
+    transition: box-shadow 0.3s;
+}
+.header-navbar:hover {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Increase shadow on hover */
 }
 .logo img {
     max-width: 100px; 
@@ -48,16 +52,23 @@ body, html {
 }
 
 .left-panel {
-    flex: 0 0 30%; /* 30% width */
+    flex: 0 0 40%; /* 30% width */
     background-color: white;
 }
 
 .right-panel {
-    flex: 1; /* Takes remaining space */
-    background-color: #f5f5f5; /* Light grey color */
+    flex: 1; 
+    background-color: rgb(189, 226, 114); 
 }
 
 /* User Info Styles */
+.user-info {
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Add shadow for card effect */
+    transition: box-shadow 0.3s; /* Smooth transition for shadow */
+}
+.user-info:hover {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Increase shadow on hover */
+}
 .user-info img {
     width: 100px;
     height: 100px;
@@ -71,6 +82,11 @@ body, html {
     text-decoration: none;
     color: #333333;
 }
+.vertical-nav a:hover {
+    background-color: #f0f0f0; /* Light grey background on hover */
+    color: yellowgreen; /* Change text color on hover */
+    transition: background-color 0.3s, color 0.3s; /* Smooth transition */
+}
 
 /* Circular Progress Ring Styles */
 .progress-ring {
@@ -78,7 +94,7 @@ body, html {
     width: 150px;
     height: 150px;
     border-radius: 50%;
-    /* background-color: #b06b6b; */
+    background-color: #b06b6b; 
     margin: 20px auto;
 }
 
@@ -91,6 +107,12 @@ body, html {
     border-radius: 50%;
     background-color: #55acee; /* Change color as needed */
     clip: rect(0, 50%, 100%, 0);
+    animation: progressAnimation 3s infinite;
+}
+
+@keyframes progressAnimation {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
 }
 
 .overlay {
@@ -119,3 +141,33 @@ hr {
     background-color: #e0e0e0; /* Light grey color */
     margin: 10px 0; /* Adjust margin as needed */
 }
+label {
+    display: block;
+    margin-bottom: 5px;
+  }
+  
+  input[type="text"] {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    box-sizing: border-box;
+  }
+  
+  button[type="submit"] {
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+    margin-top: 20px;
+  }
+  
+  button[type="submit"]:hover {
+    background-color: #45a049;
+    transform: translateY(-2px); /* Move the button slightly up on hover */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Add shadow on hover */
+    transition: background-color 0.3s, transform 0.3s, box-shadow 0.3s; /* Smooth transition */
+  }

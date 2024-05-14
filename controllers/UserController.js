@@ -17,7 +17,7 @@ exports.signup = async (req, res) => {
     // Check if the user was successfully saved in the database
     const savedUser = await User.findOne({ email });
     if (savedUser) {
-      sendMail(email, username);  // sends verification email to user's email
+      // sendMail(email, username);  // sends verification email to user's email
       return res.redirect("/dashboard");
     } else {
       return res.send("Error signing up user. Please try again later.");

@@ -1,11 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>User Dashboard</title>
     <link rel="stylesheet" href="/css/dashboardstyles.css">
 </head>
+
 <body>
     <div class="container">
         <header class="header-navbar">
@@ -23,43 +25,69 @@
         </header>
         <hr style="color: red;">
         <div class="body-container"> <!-- Grey color -->
-        <div class="left-panel">
-            <!-- User Info -->
-            <div class="user-info">
-                <img src="<%= user.image %>" alt="User Image">
-                <h2><%= user.name %></h2>
-                <p>Gender: <%= user.gender %></p>
-                <p>Age: <%= user.age %></p>
+            <div class="left-panel">
+                <!-- User Info -->
+                <div class="user-info">
+                    <img src="<%= user.image %>" alt="User Image">
+                    <h2>
+                       <p> Name: <%= user.username %> </p>
+                    </h2>
+                    <p>Gender: <%= user.email %>
+                    </p>
+                    <p>Age: <%= user.age %>
+                    </p>
+                </div>
+                <hr>
+                <!-- Height and Weight -->
+                <div class="height-weight">
+                    <p>Height: <%= user.height %> cm</p>
+                    <p>Weight: <%= user.weight %> kg</p>
+                </div>
+                <hr>
+                <!-- Vertical Navigation -->
+                <div class="vertical-nav">
+                    <a href="#">Home</a>
+                    <a href="#">Settings</a>
+                    <button id="record-button">Add Daily Record</button>
+
+
+                    <!-- Hidden Daily Record Form -->
+                    <div id="record-form" style="display: none;">
+                        <h3>Add Daily Record</h3>
+                        <form id="daily-record-form" action="/save-record" method="POST">
+                            <label for="walk-duration">Walk Duration (minutes):</label>
+                            <input type="number" id="walk-duration" name="walk-duration" required><br>
+                            <label for="calories-intake">Calories Intake:</label>
+                            <input type="number" id="calories-intake" name="calories-intake" required><br>
+                            <label for="exercise-minutes">Minutes of Exercise:</label>
+                            <input type="number" id="exercise-minutes" name="exercise-minutes" required><br>
+                    
+                            <button type="submit">Submit</button>
+                            <button type="button" id="cancel-button">Cancel</button>
+                        </form>
+                        
+                    </div>
+
+
+                </div>
             </div>
-            <hr>
-            <!-- Height and Weight -->
-            <div class="height-weight">
-                <p>Height: <%= user.height %> cm</p>
-                <p>Weight: <%= user.weight %> kg</p>
+            <div class="right-panel">
+                <!-- Dashboard Data -->
+                <div class="dashboard-data">
+                    <p>Steps: 5000</p>
+                    <p>Distance: 5 km</p>
+                    <p>Calories: 300 kcal</p>
+                </div>
+                <!-- Circular Progress Ring -->
+                <div class="progress-ring">
+                    <div class="progress"></div>
+                    <div class="overlay"></div>
+                    <div class="text">50%</div>
+                </div>
             </div>
-            <hr>
-            <!-- Vertical Navigation -->
-            <div class="vertical-nav">
-                <a href="#">Home</a>
-                <a href="#">Settings</a>
-            </div>
-        </div>
-        <div class="right-panel">
-            <!-- Dashboard Data -->
-            <div class="dashboard-data">
-                <p>Steps: 5000</p>
-                <p>Distance: 5 km</p>
-                <p>Calories: 300 kcal</p>
-            </div>
-            <!-- Circular Progress Ring -->
-            <div class="progress-ring">
-                <div class="progress"></div>
-                <div class="overlay"></div>
-                <div class="text">50%</div>
-            </div>
-        </div>
         </div>
     </div>
     <script src="/js/dashboardscript.js"></script>
 </body>
+
 </html>

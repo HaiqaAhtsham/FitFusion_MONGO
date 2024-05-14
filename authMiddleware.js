@@ -10,12 +10,6 @@ const verifyToken = async (req, res, next) => {
     const decoded = jwt.verify(token, 'ABCDEFGHIJKLMNOPQRSTUVWXYZABCDEF');
     req.user = decoded;
 
-    // Check if the user exists in the database
-    const existingUser = await User.findById(req.user.userId);
-    if (!existingUser) {
-      return res.status(403).send('User not found');
-    }
-
     // Check if the role in the token is 'user'
     if (req.user.role !== 'user') {
       return res.status(403).send('Unauthorized User access');

@@ -26,9 +26,9 @@ router.get('/forgotpassword.html', (req, res) => {
 // Dashboard route with authentication middleware
 router.get('/dashboard', verifyToken, checkUserRole, (req, res) => {
     if (req.user && req.user.role === 'user') {
-        res.render('dashboard',{user: req.user}); // Assuming your EJS file is named dashboard.ejs
+        const userData = req.user;
+        res.render('dashboard',{user: userData}); // Assuming your EJS file is named dashboard.ejs
     }
-    // res.render('views/dashboard', { user: req.user });
 });
 
 
