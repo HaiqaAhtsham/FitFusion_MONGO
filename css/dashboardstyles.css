@@ -1,0 +1,121 @@
+body, html {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+}
+.header-navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: white;
+    padding: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Add shadow for elevation effect */
+}
+.logo img {
+    max-width: 100px; 
+}
+.center-content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.nav-arrows {
+    cursor: pointer;
+    margin: 0 10px;
+}
+
+.notifications {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+.bell-icon {
+    font-size: 20px;
+    cursor: pointer;
+}
+.body-container {
+    display: flex;
+    flex: 1;
+    background-color: #f0f0f0; /* Grey color */
+}
+
+.left-panel {
+    flex: 0 0 30%; /* 30% width */
+    background-color: white;
+}
+
+.right-panel {
+    flex: 1; /* Takes remaining space */
+    background-color: #f5f5f5; /* Light grey color */
+}
+
+/* User Info Styles */
+.user-info img {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    margin-bottom: 10px;
+}
+
+.vertical-nav a {
+    display: block;
+    margin-bottom: 10px;
+    text-decoration: none;
+    color: #333333;
+}
+
+/* Circular Progress Ring Styles */
+.progress-ring {
+    position: relative;
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    /* background-color: #b06b6b; */
+    margin: 20px auto;
+}
+
+.progress {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    background-color: #55acee; /* Change color as needed */
+    clip: rect(0, 50%, 100%, 0);
+}
+
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    background-color: rgba(240, 240, 240, 0.8);
+}
+
+.text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 24px;
+    font-weight: bold;
+    color: #333333;
+}
+/* Horizontal Rule (hr) Styles */
+hr {
+    border: none;
+    height: 1px;
+    background-color: #e0e0e0; /* Light grey color */
+    margin: 10px 0; /* Adjust margin as needed */
+}

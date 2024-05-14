@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Dashboard</title>
+    <link rel="stylesheet" href="/css/dashboardstyles.css">
+</head>
+<body>
+    <div class="container">
+        <header class="header-navbar">
+            <div class="logo">
+                <img src="/images/logogym.png" alt="FitFusion Logo">
+            </div>
+            <div class="center-content">
+                <span id="prev-date" class="nav-arrows">&lt;</span>
+                <span id="current-date">May 2024</span>
+                <span id="next-date" class="nav-arrows">&gt;</span>
+            </div>
+            <div class="notifications">
+                <span class="bell-icon">🔔</span>
+            </div>
+        </header>
+        <hr style="color: red;">
+        <div class="body-container"> <!-- Grey color -->
+        <div class="left-panel">
+            <!-- User Info -->
+            <div class="user-info">
+                <img src="<%= user.image %>" alt="User Image">
+                <h2><%= user.name %></h2>
+                <p>Gender: <%= user.gender %></p>
+                <p>Age: <%= user.age %></p>
+            </div>
+            <hr>
+            <!-- Height and Weight -->
+            <div class="height-weight">
+                <p>Height: <%= user.height %> cm</p>
+                <p>Weight: <%= user.weight %> kg</p>
+            </div>
+            <hr>
+            <!-- Vertical Navigation -->
+            <div class="vertical-nav">
+                <a href="#">Home</a>
+                <a href="#">Settings</a>
+            </div>
+        </div>
+        <div class="right-panel">
+            <!-- Dashboard Data -->
+            <div class="dashboard-data">
+                <p>Steps: 5000</p>
+                <p>Distance: 5 km</p>
+                <p>Calories: 300 kcal</p>
+            </div>
+            <!-- Circular Progress Ring -->
+            <div class="progress-ring">
+                <div class="progress"></div>
+                <div class="overlay"></div>
+                <div class="text">50%</div>
+            </div>
+        </div>
+        </div>
+    </div>
+    <script src="/js/dashboardscript.js"></script>
+</body>
+</html>
