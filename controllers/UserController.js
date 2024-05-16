@@ -13,7 +13,7 @@ exports.signup = async (req, res) => {
 
     // await sendMail(email);
 
-    res.redirect("/dashboard");
+    res.redirect("/views/test.html"); // Redirect to test.html upon successful signup
   } catch (error) {
     console.error("Error signing up user:", error);
     res.send("Error signing up user. Please try again later.");
@@ -27,11 +27,11 @@ exports.signin = async (req, res) => {
     if (!existingUser) {
       return res.send("Incorrect credentials. Please try again.");
     }
-    req.session.User=existingUser;
-    res.redirect("/dashboard");
+    req.session.User = existingUser;
+    res.redirect("/views/test.html"); // Redirect to test.html upon successful signin
   } catch (error) {
     console.error("Error signing in user:", error);
-    res.send("Error signing in user. Please try again later." );
+    res.send("Error signing in user. Please try again later.");
   }
 };
 
@@ -44,14 +44,13 @@ exports.forgotpassword = async (req, res) => {
       return res.send("User not found. Please check your email and try again.");
     }
     if (newPassword !== confirmPassword) {
-        return res.send('New password and confirm password do not match.');
+      return res.send("New password and confirm password do not match.");
     }
     existingUser.password = newPassword;
     await existingUser.save();
     res.send("Password reset successfully");
-  } 
-  catch (err) {
+  } catch (err) {
     console.error("Error resetting password:", err);
     res.send("Error resetting password.");
   }
-}
+};
