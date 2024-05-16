@@ -33,7 +33,7 @@ app.use('/images', express.static(path.join(__dirname, 'images')));
 app.use(express.urlencoded({ extended: true }));
 
 // Connect to MongoDB
-mongoose.connect('mongodb+srv://<user2000>:<haiqa123>@fitfusion.unza65s.mongodb.net/?retryWrites=true&w=majority&appName=FitFusion');
+mongoose.connect('mongodb+srv://user2000:haiqa123@fitfusion.unza65s.mongodb.net/?retryWrites=true&w=majority&appName=FitFusion');
 const db = mongoose.connection;
 db.on('error', console.error.bind(console, 'MongoDB connection error:'));
 db.once('open', () => {
